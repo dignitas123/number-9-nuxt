@@ -1,0 +1,76 @@
+<template>
+  <div id="hero-content">
+    <h1 id="main-quote">Anwendungslösungen für Ihr Unternehmen</h1>
+    <h2 id="main-quote-1">
+      <em>Number9 Technology Solutions</em> steht für Design, Effizienz &amp;
+      Interoperabilität. Kontaktieren Sie uns noch heute um Ihre Ideen
+      Wirklichkeit werden zu lassen!
+    </h2>
+  </div>
+</template>
+
+<style scoped lang="scss">
+#hero-content {
+  position: relative;
+  margin-right: 7%;
+  margin-left: 7%;
+  z-index: 1;
+  border-radius: 25px;
+  text-align: left;
+  box-shadow: 0px 0px 40px;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+  margin-top: 150px;
+  margin-bottom: 50px;
+}
+
+#main-quote {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+@media (max-width: 520px) {
+  #main-quote {
+    font-size: 24px;
+  }
+}
+
+@media (min-width: 730px) {
+  #main-quote {
+    font-size: 60px;
+  }
+}
+
+@media (min-width: 956px) {
+  #main-quote {
+    font-size: 80px;
+    font-weight: bold;
+  }
+}
+
+#main-quote-1 {
+  text-transform: none;
+  font-size: 20px;
+  margin-top: 50px;
+  font-weight: bold;
+}
+
+@media (max-width: 520px) {
+  #main-quote-1 {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 730px) {
+  #main-quote-1 {
+    font-size: 30px;
+  }
+}
+
+@media (min-width: 956px) {
+  #main-quote-1 {
+    font-size: 50px;
+  }
+}
+</style>
