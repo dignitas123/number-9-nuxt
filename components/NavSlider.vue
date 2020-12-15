@@ -151,10 +151,10 @@ export default {
     })
   },
   methods: {
-    showSidebar: () => {
+    showSidebar() {
       this.showNavSlide = true
     },
-    hideSidebar: () => {
+    hideSidebar() {
       this.showNavSlide = false
       this.$store.commit('toggleNavbar', false)
     },

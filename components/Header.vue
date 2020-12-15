@@ -2,7 +2,7 @@
   <nav class="navbar navbar-light navbar-expand-md text-white">
     <div class="container">
       <div class="navbar-brand"></div>
-      <div id="openMenuArea" @click="toggleNavbar(true)">
+      <div id="openMenuArea" @click="toggleNav(true)">
         <DirtyHamburger />
       </div>
       <div
@@ -149,6 +149,7 @@
 </template>
 
 <script>
+import { mapState, mapMutations } from 'vuex'
 import NavSlider from './NavSlider.vue'
 import DirtyHamburger from './icons/DirtyHamburger.vue'
 
@@ -164,20 +165,31 @@ export default {
       hover3: false,
     }
   },
+  computed: {
+    ...mapState({
+      navSliderOpen: ['UI', ['state.navSliderOpen']],
+    }),
+  },
+  // computed: mapState({
+  //   navSliderOpen: 'UI/navSliderOpen',
+  // }),
   watch: {
     '$store.state.navsliderOpen': () => {
-      console.log('value changed to', this.$store.state.navsliderOpen)
+      console.log('changed')
       this.$store.state.navsliderOpen ? this.showSidebar() : this.hideSidebar()
+    },
+    navSliderOpen(newValue, oldValue) {
+      console.log('changed')
     },
   },
   methods: {
-    toggleNavbar: (open) => {
-      this.$store.commit('toggleNavbar', open)
-    },
-    showSidebar: () => {
+    ...mapMutations('UI', {
+      toggleNav: 'getters.navsliderOpen',
+    }),
+    showSidebar() {
       this.$refs.navSlider.showSidebar()
     },
-    hideSidebar: () => {
+    hideSidebar() {
       this.$refs.navSlider.hideSidebar()
     },
   },

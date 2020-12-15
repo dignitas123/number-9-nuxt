@@ -11,22 +11,17 @@
 
 <style scoped lang="scss">
 #hero-content {
-  position: relative;
   margin-right: 7%;
   margin-left: 7%;
-  z-index: 1;
   border-radius: 25px;
-  text-align: left;
   box-shadow: 0px 0px 40px;
   padding: 15px;
   background: rgba(0, 0, 0, 0.5);
-  font-weight: bold;
-  margin-top: 150px;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 
 #main-quote {
-  font-size: 40px;
+  font-size: 30px;
   font-weight: bold;
 }
 
@@ -44,7 +39,7 @@
 
 @media (min-width: 956px) {
   #main-quote {
-    font-size: 80px;
+    font-size: 40px;
     font-weight: bold;
   }
 }

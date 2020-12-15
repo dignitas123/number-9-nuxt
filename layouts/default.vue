@@ -16,7 +16,7 @@ export default {
     Footer,
   },
   methods: {
-    setNavSliderOpen: function () {
+    setNavSliderOpen() {
       this.$store.commit('toggleNavbar', true)
     },
   },

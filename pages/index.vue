@@ -1,11 +1,11 @@
 <template>
-  <section class="text-capitalize text-left" id="pageContent">
+  <section id="pageContent" class="text-capitalize text-left">
     <HeroContent />
     <ContactButton
+      :is-hover="isHover"
       @mouseover="isHover = true"
       @mouseleave="isHover = false"
       @click="openContact"
-      :isHover="isHover"
     />
     <KontaktPopup ref="kontaktpopup" />
     <StarAnimation />
@@ -31,7 +31,7 @@ export default {
     }
   },
   methods: {
-    openContact: function () {
+    openContact() {
       this.$refs.kontaktpopup.$bvModal.show('modal-center')
     },
   },
@@ -46,6 +46,8 @@ export default {
   background-size: auto;
   height: 100vh;
   color: white !important;
+  margin-top: -11vh;
+  padding-top: 33vh;
 }
 
 @media (min-width: 768px) {
