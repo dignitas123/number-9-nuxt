@@ -2,10 +2,10 @@
   <b-sidebar
     id="sidebarBackdrop"
     v-touch:swipe.right="hideSidebar"
+    class="sidebar-backdrop"
     aria-labelledby="sidebar-no-header-title"
     no-header
     backdrop-variant="dark"
-    bg-variant="dark"
     text-variant="light"
     backdrop
     shadow
@@ -167,6 +167,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+.sidebar-backdrop {
+  background-image: linear-gradient(to right, #1b1b1b, #4a85fe) !important;
+}
+
 h4:focus {
   outline: none !important;
 }

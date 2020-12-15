@@ -74,6 +74,16 @@ footer {
   color: #fff;
 }
 
+@media (max-width: 592px) {
+  #footer-contacts {
+    flex: none !important;
+    max-width: none !important;
+  }
+  footer {
+    text-align: center;
+  }
+}
+
 .footer-navigation h3 {
   margin: 0;
   font: normal 36px Cookie, cursive;

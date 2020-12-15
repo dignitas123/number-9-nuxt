@@ -5,7 +5,7 @@
       :is-hover="isHover"
       @mouseover="isHover = true"
       @mouseleave="isHover = false"
-      @click="openContact"
+      @click.native="openContact"
     />
     <KontaktPopup ref="kontaktpopup" />
     <StarAnimation />
@@ -32,6 +32,7 @@ export default {
   },
   methods: {
     openContact() {
+      console.log('clicked')
       this.$refs.kontaktpopup.$bvModal.show('modal-center')
     },
   },
@@ -50,7 +51,7 @@ export default {
   padding-top: 33vh;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 625px) {
   #pageContent {
     background: url('~@/assets/img/galaxy-11098.jpg') center / cover no-repeat;
   }
