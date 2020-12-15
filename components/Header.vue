@@ -2,7 +2,7 @@
   <nav class="navbar navbar-light navbar-expand-md text-white">
     <div class="container">
       <div class="navbar-brand"></div>
-      <div id="openMenuArea" @click="toggleNav(true)">
+      <div id="openMenuArea" @click="openMenu">
         <DirtyHamburger />
       </div>
       <div
@@ -149,7 +149,6 @@
 </template>
 
 <script>
-import { mapState, mapMutations } from 'vuex'
 import NavSlider from './NavSlider.vue'
 import DirtyHamburger from './icons/DirtyHamburger.vue'
 
@@ -163,33 +162,27 @@ export default {
       hover1: false,
       hover2: false,
       hover3: false,
+      navSliderIsOpen: false,
     }
   },
-  computed: {
-    ...mapState({
-      navSliderOpen: ['UI', ['state.navSliderOpen']],
-    }),
-  },
-  // computed: mapState({
-  //   navSliderOpen: 'UI/navSliderOpen',
-  // }),
   watch: {
-    '$store.state.navsliderOpen': () => {
-      console.log('changed')
-      this.$store.state.navsliderOpen ? this.showSidebar() : this.hideSidebar()
+    '$store.state.navslider.open': function () {
+      this.navSliderIsOpen = !this.navSliderIsOpen
     },
-    navSliderOpen(newValue, oldValue) {
-      console.log('changed')
+    navSliderIsOpen: function () {
+      this.navSliderIsOpen ? this.showSidebar() : this.hideSidebar()
     },
   },
   methods: {
-    ...mapMutations('UI', {
-      toggleNav: 'getters.navsliderOpen',
-    }),
+    openMenu() {
+      this.$store.commit('navslider/open')
+    },
     showSidebar() {
+      this.navSliderIsOpen = true
       this.$refs.navSlider.showSidebar()
     },
     hideSidebar() {
+      this.navSliderIsOpen = false
       this.$refs.navSlider.hideSidebar()
     },
   },

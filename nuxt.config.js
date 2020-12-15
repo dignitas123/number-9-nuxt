@@ -33,6 +33,7 @@ export default {
   eslint: {
     rules: {
       'no-console': false,
+      'object-shorthand': false,
     },
   },
   // Modules (https://go.nuxtjs.dev/config-modules)

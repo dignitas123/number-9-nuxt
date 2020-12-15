@@ -156,7 +156,7 @@ export default {
     },
     hideSidebar() {
       this.showNavSlide = false
-      this.$store.commit('toggleNavbar', false)
+      this.$store.commit('navslider/close')
     },
     // toggle: () => {
     //   const x = this.$refs.BCollapse

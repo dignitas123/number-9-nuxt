@@ -17,7 +17,7 @@ export default {
   },
   methods: {
     setNavSliderOpen() {
-      this.$store.commit('toggleNavbar', true)
+      this.$store.commit('navslider/open')
     },
   },
 }
