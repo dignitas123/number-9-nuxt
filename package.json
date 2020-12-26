@@ -16,13 +16,20 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
     "@fortawesome/vue-fontawesome": "^2.0.0",
     "@nuxt/content": "^1.9.0",
+    "@nuxtjs/auth": "4.9.1",
     "@nuxtjs/axios": "^5.12.2",
     "@nuxtjs/pwa": "^3.0.2",
+    "base64url": "^3.0.1",
     "bootstrap": "^4.5.2",
     "bootstrap-vue": "^2.17.3",
     "core-js": "^3.6.5",
+    "googleapis": "^39.2.0",
+    "mimemessage": "^1.0.5",
     "nuxt": "^2.14.6",
-    "vue2-touch-events": "^3.0.1"
+    "nuxt-mail": "^1.0.2",
+    "validator": "^13.5.2",
+    "vue2-touch-events": "^3.0.1",
+    "xss-filters": "^1.2.7"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^3.1.0",

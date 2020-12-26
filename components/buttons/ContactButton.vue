@@ -39,6 +39,9 @@ export default {
   &:hover {
     background: rgba(0, 123, 255, 0.678) !important;
   }
+  &:focus {
+    box-shadow: none;
+  }
 }
 
 @media (min-width: 956px) {

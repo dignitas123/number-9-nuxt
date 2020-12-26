@@ -2,7 +2,7 @@
   <b-sidebar
     id="sidebarBackdrop"
     v-touch:swipe.right="hideSidebar"
-    class="sidebar-backdrop"
+    bg-variant="primary"
     aria-labelledby="sidebar-no-header-title"
     no-header
     backdrop-variant="dark"
@@ -167,7 +167,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-.sidebar-backdrop {
+.sidebar-class {
   background-image: linear-gradient(to right, #1b1b1b, #4a85fe) !important;
 }
 
@@ -181,7 +181,7 @@ h4:focus {
     margin-bottom: 15px;
     margin-top: 15px;
     &:hover {
-      color: #007bff;
+      color: #000;
     }
   }
   div {
@@ -192,7 +192,7 @@ h4:focus {
       color: #343a40;
       &:hover {
         text-decoration: none;
-        color: #007bff;
+        color: #000;
       }
     }
   }
