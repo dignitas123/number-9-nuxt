@@ -99,36 +99,7 @@ export default {
   methods: {
     onSubmit(evt) {
       evt.preventDefault()
-      this.$axios
-        .post('https://www.algoinvest.online/api/sendmessage', {
-          msg: {
-            sender: 'testsender',
-            subject: 'testsubject',
-            message_text: 'text text text',
-          },
-        })
-        .then(function (response) {
-          console.log(response)
-          const msg = response.send_msg
-          this.$axios
-            .post(
-              'https://gmail.googleapis.com/gmail/v1/users/910811126317-isbkdfodcn2n7gmhf1p2ndmk6j4c1qra.apps.googleusercontent.com/messages/send',
-              {
-                raw: {
-                  msg,
-                },
-              }
-            )
-            .then(function (response) {
-              console.log(response)
-            })
-            .catch(function (error) {
-              console.log(error)
-            })
-        })
-        .catch(function (error) {
-          console.log(error)
-        })
+      // send an email!
     },
     onReset(evt) {
       evt.preventDefault()

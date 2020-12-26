@@ -46,16 +46,6 @@ export default {
     '@nuxtjs/pwa',
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
-    // [
-    //   'nuxt-mail',
-    //   {
-    //     smtp: {
-    //       host: 'smtpout.europe.secureserver.net',
-    //       port: 465,
-    //     },
-    //   },
-    // ],
-    '@nuxtjs/auth',
   ],
   bootstrapVue: {
     icons: true,
@@ -69,20 +59,4 @@ export default {
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {},
-
-  // mail: {
-  //   smtp: {
-  //     host: "smtpout.europe.secureserver.net",
-  //     port: 465,
-  //   },
-  // },
-
-  auth: {
-    strategies: {
-      google: {
-        clientId:
-          '910811126317-isbkdfodcn2n7gmhf1p2ndmk6j4c1qra.apps.googleusercontent.com',
-      },
-    },
-  },
 }
