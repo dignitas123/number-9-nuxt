@@ -13,6 +13,13 @@ export default {
           'Number9 Technology Solutions ist eine Software- und Webentwicklungs Firma mit Sitz in Freiburg.',
       },
     ],
+    script: [
+      {
+        hid: 'staranimation',
+        src: 'js/loadCanvasAnimation.js',
+        defer: true,
+      },
+    ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
 
