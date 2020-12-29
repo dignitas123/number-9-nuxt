@@ -101,15 +101,23 @@ export default {
   methods: {
     onSubmit(evt) {
       evt.preventDefault()
-      this.$axios
-        .post('https://www.algoinvest.online/mailapi/sendmessage', {
-          msg: {
-            sender: this.form.email,
-            subject: this.form.anliegen,
-            text: `Name: ${this.form.name}\n\nMail: ${this.form.email}\n\nAnliegen: \n\n${this.form.text}`,
-          },
-        })
-        .then((res) => console.log(res))
+      this.$axios.post('https://www.algoinvest.online/mailapi/sendmessage', {
+        msg: {
+          sender: this.form.email,
+          subject: this.form.anliegen,
+          text: `Name: ${this.form.name}\n\nMail: ${this.form.email}\n\nAnliegen: \n\n${this.form.text}`,
+        },
+      })
+      this.$bvToast.toast(
+        'Vielen Dank! Wir werden in Kürze mit Ihnen Kontakt aufnehmen.',
+        {
+          title: 'Ihre Nachricht wurde gesendet.',
+          toaster: 'b-toaster-bottom-center',
+          solid: true,
+          appendToast: false,
+        }
+      )
+      this.$bvModal.hide('modal-center')
     },
     onReset(evt) {
       evt.preventDefault()
