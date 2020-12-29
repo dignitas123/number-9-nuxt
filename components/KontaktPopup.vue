@@ -7,7 +7,17 @@
       size="lg"
       hide-footer
     >
-      <b-form v-if="show" @submit="onSubmit" @reset="onReset">
+      <!-- <iframe
+        src="https://docs.google.com/forms/d/e/1FAIpQLScXwGlhOstNHIeaf2NL4ufChAVfFVBYcIc9GqjJAbY1fA240A/viewform?embedded=true"
+        width="640"
+        height="836"
+        frameborder="0"
+        marginheight="0"
+        marginwidth="0"
+        >Loading…</iframe
+      > -->
+
+      <b-form v-if="show" @submit="onSubmit" @reset="onReset" method="POST">
         <b-form-group
           id="input-group-1"
           label="Email:"
@@ -50,19 +60,11 @@
           ></b-form-textarea>
         </b-form-group>
 
-        <!-- <b-form-group id="input-group-4">
-          <b-form-checkbox-group v-model="form.checked" id="checkboxes-4">
-            <b-form-checkbox value="me">Check me out</b-form-checkbox>
-            <b-form-checkbox value="that">Check that out</b-form-checkbox>
-          </b-form-checkbox-group>
-        </b-form-group> -->
-
         <b-button type="submit" variant="primary" block>Senden</b-button>
-        <!-- <b-button type="reset" variant="danger">Reset</b-button> -->
       </b-form>
-      <!-- <b-card class="mt-3" header="Form Data Result">
+      <b-card class="mt-3" header="Form Data Result">
         <pre class="m-0">{{ form }}</pre>
-      </b-card> -->
+      </b-card>
     </b-modal>
   </div>
 </template>
@@ -99,7 +101,15 @@ export default {
   methods: {
     onSubmit(evt) {
       evt.preventDefault()
-      // send an email!
+      this.$axios
+        .post('https://www.algoinvest.online/mailapi/sendmessage', {
+          msg: {
+            sender: this.form.email,
+            subject: this.form.anliegen,
+            text: `Name: ${this.form.name}\n\nMail: ${this.form.email}\n\nAnliegen: \n\n${this.form.text}`,
+          },
+        })
+        .then((res) => console.log(res))
     },
     onReset(evt) {
       evt.preventDefault()
