@@ -228,6 +228,12 @@ export default {
   }
 }
 
+@media (max-width: 776px) {
+  .navbar-brand {
+    margin: 0 !important;
+  }
+}
+
 .navbar-light .navbar-brand {
   background: url('~@/assets/img/logo.svg') center / contain no-repeat;
   width: 150px;

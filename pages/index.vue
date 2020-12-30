@@ -54,6 +54,7 @@ export default {
 @media (min-width: 625px) {
   #pageContent {
     background: url('~@/assets/img/galaxy-11098.jpg') center / cover no-repeat;
+    margin-top: -13vh;
   }
 }
 </style>
