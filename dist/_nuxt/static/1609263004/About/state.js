@@ -1,1 +1,0 @@
-window.__NUXT__=(function(a,b){return {staticAssetsBase:"\u002F_nuxt\u002Fstatic\u002F1609263004",layout:"default",error:{statusCode:404,path:a,message:"This page could not be found"},state:{navslider:{open:b}},serverRendered:b,routePath:a,config:{content:{dbHash:"b13baf21"}}}}("\u002FAbout",false));
