@@ -1,7 +1,7 @@
 <template>
   <button
     id="contact-main-button"
-    class="btn btn-primary border rounded-0"
+    class="btn btn-primary border rounded-0 mt-5"
     type="button"
     :class="{ 'contact-button-hover': isHover }"
   >

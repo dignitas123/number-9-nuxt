@@ -1,18 +1,20 @@
 <template>
   <div id="hero-content">
-    <h1 id="main-quote">Anwendungslösungen für Ihr Unternehmen</h1>
+    <h1 id="main-quote">
+      IT-Service &amp; Anwendungslösungen für Ihre Unternehmung
+    </h1>
     <h2 id="main-quote-1">
-      <em>Number9 Technology Solutions</em> steht für Design, Effizienz &amp;
-      Interoperabilität. Kontaktieren Sie uns noch heute um Ihre Ideen
-      Wirklichkeit werden zu lassen!
+      Kontaktieren Sie uns noch heute um Ihre Ideen Wirklichkeit werden zu
+      lassen!
     </h2>
   </div>
 </template>
 
 <style scoped lang="scss">
 #hero-content {
-  margin-right: 7%;
-  margin-left: 7%;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 700px;
   border-radius: 25px;
   box-shadow: 0px 0px 40px;
   padding: 15px;
@@ -23,6 +25,7 @@
 #main-quote {
   font-size: 30px;
   font-weight: bold;
+  text-align: center;
 }
 
 @media (max-width: 520px) {
@@ -49,6 +52,7 @@
   font-size: 20px;
   margin-top: 50px;
   font-weight: bold;
+  text-align: center;
 }
 
 @media (max-width: 520px) {
