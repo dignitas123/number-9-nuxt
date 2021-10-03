@@ -12,16 +12,16 @@
      * @author: Jack Doyle, jack@greensock.com
      **/
     const _gsScope =
-      typeof module !== 'undefined' &&
+      typeof module !== "undefined" &&
         module.exports &&
-        typeof global !== 'undefined'
+        typeof global !== "undefined"
         ? global
         : this || window
       ; (_gsScope._gsQueue || (_gsScope._gsQueue = [])).push(function () {
-        'use strict'
+        "use strict"
         _gsScope._gsDefine(
-          'easing.Back',
-          ['easing.Ease'],
+          "easing.Back",
+          ["easing.Ease"],
           function (t) {
             let e
             let i
@@ -32,15 +32,19 @@
             const o = Math.PI / 2
             const h = n._class
             const l = function (e, i) {
-              const s = h('easing.' + e, function () { }, !0)
+              const s = h("easing." + e, function () { }, !0)
               const r = (s.prototype = new t())
               return (r.constructor = s), (r.getRatio = i), s
             }
             const _ = t.register || function () { }
             const u = function (t, e, i, s) {
               const r = h(
-                'easing.' + t,
-                { easeOut: new e(), easeIn: new i(), easeInOut: new s() },
+                "easing." + t,
+                {
+                  easeOut: new e(),
+                  easeIn: new i(),
+                  easeInOut: new s(),
+                },
                 !0
               )
               return _(r, t), r
@@ -56,7 +60,7 @@
             }
             const p = function (e, i) {
               const s = h(
-                'easing.' + e,
+                "easing." + e,
                 function (t) {
                   ; (this._p1 = t || t === 0 ? t : 1.70158),
                     (this._p2 = 1.525 * this._p1)
@@ -74,21 +78,21 @@
               )
             }
             const f = u(
-              'Back',
-              p('BackOut', function (t) {
+              "Back",
+              p("BackOut", function (t) {
                 return (t -= 1) * t * ((this._p1 + 1) * t + this._p1) + 1
               }),
-              p('BackIn', function (t) {
+              p("BackIn", function (t) {
                 return t * t * ((this._p1 + 1) * t - this._p1)
               }),
-              p('BackInOut', function (t) {
+              p("BackInOut", function (t) {
                 return (t *= 2) < 1
                   ? 0.5 * t * t * ((this._p2 + 1) * t - this._p2)
                   : 0.5 * ((t -= 2) * t * ((this._p2 + 1) * t + this._p2) + 2)
               })
             )
             const m = h(
-              'easing.SlowMo',
+              "easing.SlowMo",
               function (t, e, i) {
                 ; (e = e || e === 0 ? e : 0.7),
                   t == null ? (t = 0.7) : t > 1 && (t = 1),
@@ -122,7 +126,7 @@
                 return new m(t, e, i)
               }),
               (e = h(
-                'easing.SteppedEase',
+                "easing.SteppedEase",
                 function (t) {
                   ; (t = t || 1), (this._p1 = 1 / t), (this._p2 = t + 1)
                 },
@@ -140,7 +144,7 @@
                 return new e(t)
               }),
               (i = h(
-                'easing.RoughEase',
+                "easing.RoughEase",
                 function (e) {
                   e = e || {}
                   for (
@@ -150,7 +154,7 @@
                     n,
                     a,
                     o,
-                    h = e.taper || 'none',
+                    h = e.taper || "none",
                     l = [],
                     _ = 0,
                     u = 0 | (e.points || 20),
@@ -158,17 +162,17 @@
                     f = e.randomize !== !1,
                     m = e.clamp === !0,
                     d = e.template instanceof t ? e.template : null,
-                    g = typeof e.strength === 'number' ? 0.4 * e.strength : 0.4;
+                    g = typeof e.strength === "number" ? 0.4 * e.strength : 0.4;
                     --p > -1;
 
                   )
                     (i = f ? Math.random() : (1 / u) * p),
                       (s = d ? d.getRatio(i) : i),
-                      h === 'none'
+                      h === "none"
                         ? (r = g)
-                        : h === 'out'
+                        : h === "out"
                           ? ((n = 1 - i), (r = n * n * g))
-                          : h === 'in'
+                          : h === "in"
                             ? (r = i * i * g)
                             : i < 0.5
                               ? ((n = 2 * i), (r = 0.5 * n * n * g))
@@ -209,8 +213,8 @@
               }),
               (i.ease = new i()),
               u(
-                'Bounce',
-                l('BounceOut', function (t) {
+                "Bounce",
+                l("BounceOut", function (t) {
                   return 1 / 2.75 > t
                     ? 7.5625 * t * t
                     : 2 / 2.75 > t
@@ -219,7 +223,7 @@
                         ? 7.5625 * (t -= 2.25 / 2.75) * t + 0.9375
                         : 7.5625 * (t -= 2.625 / 2.75) * t + 0.984375
                 }),
-                l('BounceIn', function (t) {
+                l("BounceIn", function (t) {
                   return 1 / 2.75 > (t = 1 - t)
                     ? 1 - 7.5625 * t * t
                     : 2 / 2.75 > t
@@ -228,7 +232,7 @@
                         ? 1 - (7.5625 * (t -= 2.25 / 2.75) * t + 0.9375)
                         : 1 - (7.5625 * (t -= 2.625 / 2.75) * t + 0.984375)
                 }),
-                l('BounceInOut', function (t) {
+                l("BounceInOut", function (t) {
                   const e = t < 0.5
                   return (
                     (t = e ? 1 - 2 * t : 2 * t - 1),
@@ -245,14 +249,14 @@
                 })
               ),
               u(
-                'Circ',
-                l('CircOut', function (t) {
+                "Circ",
+                l("CircOut", function (t) {
                   return Math.sqrt(1 - (t -= 1) * t)
                 }),
-                l('CircIn', function (t) {
+                l("CircIn", function (t) {
                   return -(Math.sqrt(1 - t * t) - 1)
                 }),
-                l('CircInOut', function (t) {
+                l("CircInOut", function (t) {
                   return (t *= 2) < 1
                     ? -0.5 * (Math.sqrt(1 - t * t) - 1)
                     : 0.5 * (Math.sqrt(1 - (t -= 2) * t) + 1)
@@ -260,7 +264,7 @@
               ),
               (s = function (e, i, s) {
                 const r = h(
-                  'easing.' + e,
+                  "easing." + e,
                   function (t, e) {
                     ; (this._p1 = t || 1),
                       (this._p2 = e || s),
@@ -279,9 +283,9 @@
                 )
               }),
               u(
-                'Elastic',
+                "Elastic",
                 s(
-                  'ElasticOut',
+                  "ElasticOut",
                   function (t) {
                     return (
                       this._p1 *
@@ -293,7 +297,7 @@
                   0.3
                 ),
                 s(
-                  'ElasticIn',
+                  "ElasticIn",
                   function (t) {
                     return -(
                       this._p1 *
@@ -304,7 +308,7 @@
                   0.3
                 ),
                 s(
-                  'ElasticInOut',
+                  "ElasticInOut",
                   function (t) {
                     return (t *= 2) < 1
                       ? -0.5 *
@@ -321,33 +325,33 @@
                 )
               ),
               u(
-                'Expo',
-                l('ExpoOut', function (t) {
+                "Expo",
+                l("ExpoOut", function (t) {
                   return 1 - Math.pow(2, -10 * t)
                 }),
-                l('ExpoIn', function (t) {
+                l("ExpoIn", function (t) {
                   return Math.pow(2, 10 * (t - 1)) - 0.001
                 }),
-                l('ExpoInOut', function (t) {
+                l("ExpoInOut", function (t) {
                   return (t *= 2) < 1
                     ? 0.5 * Math.pow(2, 10 * (t - 1))
                     : 0.5 * (2 - Math.pow(2, -10 * (t - 1)))
                 })
               ),
               u(
-                'Sine',
-                l('SineOut', function (t) {
+                "Sine",
+                l("SineOut", function (t) {
                   return Math.sin(t * o)
                 }),
-                l('SineIn', function (t) {
+                l("SineIn", function (t) {
                   return -Math.cos(t * o) + 1
                 }),
-                l('SineInOut', function (t) {
+                l("SineInOut", function (t) {
                   return -0.5 * (Math.cos(Math.PI * t) - 1)
                 })
               ),
               h(
-                'easing.EaseLookup',
+                "easing.EaseLookup",
                 {
                   find(e) {
                     return t.map[e]
@@ -355,9 +359,9 @@
                 },
                 !0
               ),
-              _(r.SlowMo, 'SlowMo', 'ease,'),
-              _(i, 'RoughEase', 'ease,'),
-              _(e, 'SteppedEase', 'ease,'),
+              _(r.SlowMo, "SlowMo", "ease,"),
+              _(i, "RoughEase", "ease,"),
+              _(e, "SteppedEase", "ease,"),
               f
             )
           },
@@ -378,7 +382,7 @@
        * @author: Jack Doyle, jack@greensock.com
        */
       ; (function (t, e) {
-        'use strict'
+        "use strict"
         const i = (t.GreenSockGlobals = t.GreenSockGlobals || t)
         if (!i.TweenLite) {
           let s
@@ -388,12 +392,12 @@
           let o
           const l = function (t) {
             let e
-            const s = t.split('.')
+            const s = t.split(".")
             let n = i
             for (e = 0; s.length > e; e++) n[s[e]] = n = n[s[e]] || {}
             return n
           }
-          const h = l('com.greensock')
+          const h = l("com.greensock")
           const _ = 1e-10
           const u = function (t) {
             let e
@@ -410,7 +414,7 @@
               return (
                 i != null &&
                 (Array.isArray(i) ||
-                  (typeof i === 'object' && !!i.push && t.call(i) === e))
+                  (typeof i === "object" && !!i.push && t.call(i) === e))
               )
             }
           })()
@@ -428,19 +432,19 @@
                     : h && _.sc.push(this)
                 if (v === 0 && r)
                   for (
-                    u = ('com.greensock.' + s).split('.'),
+                    u = ("com.greensock." + s).split("."),
                     f = u.pop(),
-                    m = l(u.join('.'))[f] = this.gsClass = r.apply(r, o),
+                    m = l(u.join("."))[f] = this.gsClass = r.apply(r, o),
                     a &&
                     ((i[f] = m),
-                      typeof define === 'function' && define.amd
+                      typeof define === "function" && define.amd
                         ? define((t.GreenSockAMDPath
-                          ? t.GreenSockAMDPath + '/'
-                          : '') + s.split('.').pop(), [], function () {
+                          ? t.GreenSockAMDPath + "/"
+                          : "") + s.split(".").pop(), [], function () {
                             return m
                           })
                         : s === e &&
-                        typeof module !== 'undefined' &&
+                        typeof module !== "undefined" &&
                         module.exports &&
                         (module.exports = m)),
                     d = 0;
@@ -472,7 +476,7 @@
           const g = [0, 0, 1, 1]
           const T = []
           const y = v(
-            'easing.Ease',
+            "easing.Ease",
             function (t, e, i, s) {
               ; (this._func = t),
                 (this._type = i || 0),
@@ -488,21 +492,21 @@
               r,
               a,
               o,
-              l = e.split(','),
+              l = e.split(","),
               _ = l.length,
-              u = (i || 'easeIn,easeOut,easeInOut').split(',');
+              u = (i || "easeIn,easeOut,easeInOut").split(",");
               --_ > -1;
 
             )
               for (
                 r = l[_],
-                n = s ? v('easing.' + r, null, !0) : h.easing[r] || {},
+                n = s ? v("easing." + r, null, !0) : h.easing[r] || {},
                 a = u.length;
                 --a > -1;
 
               )
                 (o = u[a]),
-                  (w[r + '.' + o] = w[o + r] = n[o] = t.getRatio
+                  (w[r + "." + o] = w[o + r] = n[o] = t.getRatio
                     ? t
                     : t[o] || new t())
           })
@@ -529,22 +533,22 @@
                 e === 1 ? 1 - s : e === 2 ? s : t < 0.5 ? s / 2 : 1 - s / 2
               )
             },
-            s = ['Linear', 'Quad', 'Cubic', 'Quart', 'Quint,Strong'],
+            s = ["Linear", "Quad", "Cubic", "Quart", "Quint,Strong"],
             n = s.length;
             --n > -1;
 
           )
-            (r = s[n] + ',Power' + n),
-              P(new y(null, null, 1, n), r, 'easeOut', !0),
+            (r = s[n] + ",Power" + n),
+              P(new y(null, null, 1, n), r, "easeOut", !0),
               P(
                 new y(null, null, 2, n),
                 r,
-                'easeIn' + (n === 0 ? ',easeNone' : '')
+                "easeIn" + (n === 0 ? ",easeNone" : "")
               ),
-              P(new y(null, null, 3, n), r, 'easeInOut')
+              P(new y(null, null, 3, n), r, "easeInOut")
               ; (w.linear = h.easing.Linear.easeIn),
                 (w.swing = h.easing.Quad.easeInOut)
-          const b = v('events.EventDispatcher', function (t) {
+          const b = v("events.EventDispatcher", function (t) {
             ; (this._listeners = {}), (this._eventTarget = t || this)
           })
             ; (r = b.prototype),
@@ -582,7 +586,10 @@
                   for (e = n.length, i = this._eventTarget; --e > -1;)
                     (s = n[e]),
                       s.up
-                        ? s.c.call(s.s || i, { type: t, target: i })
+                        ? s.c.call(s.s || i, {
+                          type: t,
+                          target: i,
+                        })
                         : s.c.call(s.s || i)
               })
           let k = t.requestAnimationFrame
@@ -593,12 +600,12 @@
               return new Date().getTime()
             }
           let x = S()
-          for (s = ['ms', 'moz', 'webkit', 'o'], n = s.length; --n > -1 && !k;)
-            (k = t[s[n] + 'RequestAnimationFrame']),
+          for (s = ["ms", "moz", "webkit", "o"], n = s.length; --n > -1 && !k;)
+            (k = t[s[n] + "RequestAnimationFrame"]),
               (A =
-                t[s[n] + 'CancelAnimationFrame'] ||
-                t[s[n] + 'CancelRequestAnimationFrame'])
-          v('Ticker', function (t, e) {
+                t[s[n] + "CancelAnimationFrame"] ||
+                t[s[n] + "CancelRequestAnimationFrame"])
+          v("Ticker", function (t, e) {
             let i
             let s
             let n
@@ -620,7 +627,7 @@
                 (!i || e > 0 || t === !0) &&
                 (h.frame++, (l += e + (e >= r ? 0.004 : r - e)), (a = !0)),
                 t !== !0 && (n = s(d)),
-                a && h.dispatchEvent('tick')
+                a && h.dispatchEvent("tick")
             }
             b.call(h),
               (h.time = h.frame = 0),
@@ -671,7 +678,7 @@
           }),
             (r = h.Ticker.prototype = new h.events.EventDispatcher()),
             (r.constructor = h.Ticker)
-          const C = v('core.Animation', function (t, e) {
+          const C = v("core.Animation", function (t, e) {
             if (
               ((this.vars = e = e || {}),
                 (this._duration = this._totalDuration = t || 0),
@@ -763,22 +770,22 @@
             }),
             (r._swapSelfInParams = function (t) {
               for (var e = t.length, i = t.concat(); --e > -1;)
-                t[e] === '{self}' && (i[e] = this)
+                t[e] === "{self}" && (i[e] = this)
               return i
             }),
             (r.eventCallback = function (t, e, i, s) {
-              if ((t || '').substr(0, 2) === 'on') {
+              if ((t || "").substr(0, 2) === "on") {
                 const n = this.vars
                 if (arguments.length === 1) return n[t]
                 e == null
                   ? delete n[t]
                   : ((n[t] = e),
-                    (n[t + 'Params'] =
-                      m(i) && i.join('').includes('{self}')
+                    (n[t + "Params"] =
+                      m(i) && i.join("").includes("{self}")
                         ? this._swapSelfInParams(i)
                         : i),
-                    (n[t + 'Scope'] = s)),
-                  t === 'onUpdate' && (this._onUpdate = e)
+                    (n[t + "Scope"] = s)),
+                  t === "onUpdate" && (this._onUpdate = e)
               }
               return this
             }),
@@ -911,7 +918,7 @@
               }
               return this._gc && !t && this._enabled(!0, !1), this
             })
-          const D = v('core.SimpleTimeline', function (t) {
+          const D = v("core.SimpleTimeline", function (t) {
             C.call(this, 0, t),
               (this.autoRemoveChildren = this.smoothChildTiming = !0)
           })
@@ -981,15 +988,15 @@
                 return o || a.wake(), this._totalTime
               })
           var I = v(
-            'TweenLite',
+            "TweenLite",
             function (e, i, s) {
               if (
                 (C.call(this, i, s),
                   (this.render = I.prototype.render),
                   e == null)
               )
-                throw 'Cannot tween a null target.'
-              this.target = e = typeof e !== 'string' ? e : I.selector(e) || e
+                throw "Cannot tween a null target."
+              this.target = e = typeof e !== "string" ? e : I.selector(e) || e
               let n
               let r
               let a
@@ -1004,11 +1011,11 @@
                 ((this._overwrite = l =
                   l == null
                     ? Q[I.defaultOverwrite]
-                    : typeof l === 'number'
+                    : typeof l === "number"
                       ? l >> 0
                       : Q[l]),
                   (o || Array.isArray(e) || (e.push && m(e))) &&
-                  typeof e[0] !== 'number')
+                  typeof e[0] !== "number")
               )
                 for (
                   this._targets = a = u(e),
@@ -1020,7 +1027,7 @@
                 )
                   (r = a[n]),
                     r
-                      ? typeof r !== 'string'
+                      ? typeof r !== "string"
                         ? r.length &&
                           r !== t &&
                           r[0] &&
@@ -1033,7 +1040,7 @@
                             this._siblings[n].length > 1 &&
                             K(r, this, null, 1, this._siblings[n]))
                         : ((r = a[n--] = I.selector(r)),
-                          typeof r === 'string' && a.splice(n + 1, 1))
+                          typeof r === "string" && a.splice(n + 1, 1))
                       : a.splice(n--, 1)
               else
                 (this._propLookup = {}),
@@ -1063,13 +1070,13 @@
             for (i in t)
               G[i] ||
                 (i in e &&
-                  i !== 'transform' &&
-                  i !== 'x' &&
-                  i !== 'y' &&
-                  i !== 'width' &&
-                  i !== 'height' &&
-                  i !== 'className' &&
-                  i !== 'border') ||
+                  i !== "transform" &&
+                  i !== "x" &&
+                  i !== "y" &&
+                  i !== "width" &&
+                  i !== "height" &&
+                  i !== "className" &&
+                  i !== "border") ||
                 !(!U[i] || (U[i] && U[i]._autoCSS)) ||
                 ((s[i] = t[i]), delete t[i])
             t.css = s
@@ -1080,9 +1087,9 @@
               (r.ratio = 0),
               (r._firstPT = r._targets = r._overwrittenProps = r._startAt = null),
               (r._notifyPluginsOfEnabled = r._lazy = !1),
-              (I.version = '1.13.1'),
+              (I.version = "1.13.1"),
               (I.defaultEase = r._ease = new y(null, null, 1, 1)),
-              (I.defaultOverwrite = 'auto'),
+              (I.defaultOverwrite = "auto"),
               (I.ticker = a),
               (I.autoSleep = !0),
               (I.lagSmoothing = function (t, e) {
@@ -1095,15 +1102,19 @@
                   const i = t.$ || t.jQuery
                   return i
                     ? ((I.selector = i), i(e))
-                    : typeof document === 'undefined'
+                    : typeof document === "undefined"
                       ? e
                       : document.querySelectorAll
                         ? document.querySelectorAll(e)
-                        : document.getElementById(e.charAt(0) === '#' ? e.substr(1) : e)
+                        : document.getElementById(e.charAt(0) === "#" ? e.substr(1) : e)
                 })
           var O = []
           let L = {}
-          const N = (I._internals = { isArray: m, isSelector: E, lazyTweens: O })
+          const N = (I._internals = {
+            isArray: m,
+            isSelector: E,
+            lazyTweens: O,
+          })
           var U = (I._plugins = {})
           const F = (N.tweenLookup = {})
           let j = 0
@@ -1189,13 +1200,13 @@
                   }
                 }
               }),
-              a.addEventListener('tick', C._updateRoot)
+              a.addEventListener("tick", C._updateRoot)
           var $ = function (t, e, i) {
             let s
             let n
             let r = t._gsTweenID
             if (
-              (F[r || (t._gsTweenID = r = 't' + j++)] ||
+              (F[r || (t._gsTweenID = r = "t" + j++)] ||
                 (F[r] = { target: t, tweens: [] }),
                 e && ((s = F[r].tweens), (s[(n = s.length)] = e), i))
             )
@@ -1287,10 +1298,10 @@
                     (this._startAt = null)
                 else {
                   i = {}
-                  for (s in r) (G[s] && s !== 'autoCSS') || (i[s] = r[s])
+                  for (s in r) (G[s] && s !== "autoCSS") || (i[s] = r[s])
                   if (
                     ((i.overwrite = 0),
-                      (i.data = 'isFromStart'),
+                      (i.data = "isFromStart"),
                       (i.lazy = l && r.lazy !== !1),
                       (i.immediateRender = l),
                       (this._startAt = I.to(this.target, 0, i)),
@@ -1303,7 +1314,7 @@
                 ((this._ease = h = h
                   ? h instanceof y
                     ? h
-                    : typeof h === 'function'
+                    : typeof h === "function"
                       ? new y(h, r.easeParams)
                       : w[h] || I.defaultEase
                   : I.defaultEase),
@@ -1330,10 +1341,10 @@
                   a
                 )
               if (
-                (e && I._onPluginEvent('_onInitAllProps', this),
+                (e && I._onPluginEvent("_onInitAllProps", this),
                   a &&
                   (this._firstPT ||
-                    (typeof this.target !== 'function' && this._enabled(!1, !1))),
+                    (typeof this.target !== "function" && this._enabled(!1, !1))),
                   r.runBackwards)
               )
                 for (i = this._firstPT; i;)
@@ -1355,7 +1366,7 @@
                   if (((_ = this.vars[r]), G[r]))
                     _ &&
                       (Array.isArray(_) || (_.push && m(_))) &&
-                      _.join('').includes('{self}') &&
+                      _.join("").includes("{self}") &&
                       (this.vars[r] = _ = this._swapSelfInParams(_, this))
                   else if (
                     U[r] &&
@@ -1365,7 +1376,7 @@
                       this._firstPT = h = {
                         _next: this._firstPT,
                         t: l,
-                        p: 'setRatio',
+                        p: "setRatio",
                         s: 0,
                         c: 1,
                         f: !0,
@@ -1386,22 +1397,22 @@
                       _next: this._firstPT,
                       t: e,
                       p: r,
-                      f: typeof e[r] === 'function',
+                      f: typeof e[r] === "function",
                       n: r,
                       pg: !1,
                       pr: 0,
                     }),
                       (h.s = h.f
                         ? e[
-                          r.indexOf('set') ||
-                            typeof e['get' + r.substr(3)] !== 'function'
+                          r.indexOf("set") ||
+                            typeof e["get" + r.substr(3)] !== "function"
                             ? r
-                            : 'get' + r.substr(3)
+                            : "get" + r.substr(3)
                         ]()
                         : parseFloat(e[r])),
                       (h.c =
-                        typeof _ === 'string' && _.charAt(1) === '='
-                          ? parseInt(_.charAt(0) + '1', 10) * Number(_.substr(2))
+                        typeof _ === "string" && _.charAt(1) === "="
+                          ? parseInt(_.charAt(0) + "1", 10) * Number(_.substr(2))
                           : Number(_) - h.s || 0)
                   h && h._next && (h._next._prev = h)
                 }
@@ -1429,19 +1440,19 @@
                 if (t >= l)
                   (this._totalTime = this._time = l),
                     (this.ratio = this._ease._calcEnd ? this._ease.getRatio(1) : 1),
-                    this._reversed || ((s = !0), (n = 'onComplete')),
+                    this._reversed || ((s = !0), (n = "onComplete")),
                     l === 0 &&
                     (this._initted || !this.vars.lazy || i) &&
                     (this._startTime === this._timeline._duration && (t = 0),
                       (t === 0 || h < 0 || h === _) &&
                       h !== t &&
-                      ((i = !0), h > _ && (n = 'onReverseComplete')),
+                      ((i = !0), h > _ && (n = "onReverseComplete")),
                       (this._rawPrevTime = a = !e || t || h === t ? t : _))
                 else if (t < 1e-7)
                   (this._totalTime = this._time = 0),
                     (this.ratio = this._ease._calcEnd ? this._ease.getRatio(0) : 0),
                     (o !== 0 || (l === 0 && h > 0 && h !== _)) &&
-                    ((n = 'onReverseComplete'), (s = this._reversed)),
+                    ((n = "onReverseComplete"), (s = this._reversed)),
                     t < 0
                       ? ((this._active = !1),
                         l === 0 &&
@@ -1504,7 +1515,7 @@
                     (this._startAt &&
                       (t >= 0
                         ? this._startAt.render(t, e, i)
-                        : n || (n = '_dummyGS')),
+                        : n || (n = "_dummyGS")),
                       this.vars.onStart &&
                       (this._time !== 0 || l === 0) &&
                       (e ||
@@ -1544,8 +1555,8 @@
                       !e &&
                       this.vars[n] &&
                       this.vars[n].apply(
-                        this.vars[n + 'Scope'] || this,
-                        this.vars[n + 'Params'] || T
+                        this.vars[n + "Scope"] || this,
+                        this.vars[n + "Params"] || T
                       ),
                       l === 0 &&
                       this._rawPrevTime === _ &&
@@ -1555,16 +1566,16 @@
               }),
               (r._kill = function (t, e) {
                 if (
-                  (t === 'all' && (t = null),
+                  (t === "all" && (t = null),
                     t == null && (e == null || e === this.target))
                 )
                   return (this._lazy = !1), this._enabled(!1, !1)
                 e =
-                  typeof e !== 'string'
+                  typeof e !== "string"
                     ? e || this._targets || this.target
                     : I.selector(e) || e
                 let i, s, n, r, a, o, l, h
-                if ((m(e) || E(e)) && typeof e[0] !== 'number')
+                if ((m(e) || E(e)) && typeof e[0] !== "number")
                   for (i = e.length; --i > -1;) this._kill(t, e[i]) && (o = !0)
                 else {
                   if (this._targets) {
@@ -1574,7 +1585,7 @@
                           (this._overwrittenProps = this._overwrittenProps || []),
                           (s = this._overwrittenProps[i] = t
                             ? this._overwrittenProps[i] || {}
-                            : 'all')
+                            : "all")
                         break
                       }
                   } else {
@@ -1582,15 +1593,15 @@
                       ; (a = this._propLookup),
                         (s = this._overwrittenProps = t
                           ? this._overwrittenProps || {}
-                          : 'all')
+                          : "all")
                   }
                   if (a) {
                     ; (l = t || a),
                       (h =
                         t !== s &&
-                        s !== 'all' &&
+                        s !== "all" &&
                         t !== a &&
-                        (typeof t !== 'object' || !t._tempKill))
+                        (typeof t !== "object" || !t._tempKill))
                     for (n in l)
                       (r = a[n]) &&
                         (r.pg && r.t._kill(l) && (o = !0),
@@ -1610,7 +1621,7 @@
               (r.invalidate = function () {
                 return (
                   this._notifyPluginsOfEnabled &&
-                  I._onPluginEvent('_onDisable', this),
+                  I._onPluginEvent("_onDisable", this),
                   (this._firstPT = null),
                   (this._overwrittenProps = null),
                   (this._onUpdate = null),
@@ -1632,7 +1643,7 @@
                 return (
                   C.prototype._enabled.call(this, t, e),
                   this._notifyPluginsOfEnabled && this._firstPT
-                    ? I._onPluginEvent(t ? '_onEnable' : '_onDisable', this)
+                    ? I._onPluginEvent(t ? "_onEnable" : "_onDisable", this)
                     : !1
                 )
               }),
@@ -1673,9 +1684,9 @@
               }),
               (I.getTweensOf = function (t, e) {
                 if (t == null) return []
-                t = typeof t !== 'string' ? t : I.selector(t) || t
+                t = typeof t !== "string" ? t : I.selector(t) || t
                 let i, s, n, r
-                if ((m(t) || E(t)) && typeof t[0] !== 'number') {
+                if ((m(t) || E(t)) && typeof t[0] !== "number") {
                   for (i = t.length, s = []; --i > -1;)
                     s = s.concat(I.getTweensOf(t[i], e))
                   for (i = s.length; --i > -1;)
@@ -1686,14 +1697,14 @@
                 return s
               }),
               (I.killTweensOf = I.killDelayedCallsTo = function (t, e, i) {
-                typeof e === 'object' && ((i = e), (e = !1))
+                typeof e === "object" && ((i = e), (e = !1))
                 for (let s = I.getTweensOf(t, e), n = s.length; --n > -1;)
                   s[n]._kill(i, t)
               })
           var J = v(
-            'plugins.TweenPlugin',
+            "plugins.TweenPlugin",
             function (t, e) {
-              ; (this._overwriteProps = (t || '').split(',')),
+              ; (this._overwriteProps = (t || "").split(",")),
                 (this._propName = this._overwriteProps[0]),
                 (this._priority = e || 0),
                 (this._super = J.prototype)
@@ -1702,23 +1713,23 @@
           )
           if (
             ((r = J.prototype),
-              (J.version = '1.10.1'),
+              (J.version = "1.10.1"),
               (J.API = 2),
               (r._firstPT = null),
               (r._addTween = function (t, e, i, s, n, r) {
                 let a, o
                 return s != null &&
                   (a =
-                    typeof s === 'number' || s.charAt(1) !== '='
+                    typeof s === "number" || s.charAt(1) !== "="
                       ? Number(s) - i
-                      : parseInt(s.charAt(0) + '1', 10) * Number(s.substr(2)))
+                      : parseInt(s.charAt(0) + "1", 10) * Number(s.substr(2)))
                   ? ((this._firstPT = o = {
                     _next: this._firstPT,
                     t,
                     p: e,
                     s: i,
                     c: a,
-                    f: typeof t[e] === 'function',
+                    f: typeof t[e] === "function",
                     n: n || e,
                     r,
                   }),
@@ -1752,7 +1763,7 @@
               (r._roundProps = function (t, e) {
                 for (let i = this._firstPT; i;)
                   (t[this._propName] ||
-                    (i.n != null && t[i.n.split(this._propName + '_').join('')])) &&
+                    (i.n != null && t[i.n.split(this._propName + "_").join("")])) &&
                     (i.r = e),
                     (i = i._next)
               }),
@@ -1763,7 +1774,7 @@
                 let r
                 let a
                 let o = e._firstPT
-                if (t === '_onInitAllProps') {
+                if (t === "_onInitAllProps") {
                   for (; o;) {
                     for (a = o._next, s = n; s && s.pr > o.pr;) s = s._next
                       ; (o._prev = s ? s._prev : r) ? (o._prev._next = o) : (n = o),
@@ -1773,7 +1784,7 @@
                   o = e._firstPT = n
                 }
                 for (; o;)
-                  o.pg && typeof o.t[t] === 'function' && o.t[t]() && (i = !0),
+                  o.pg && typeof o.t[t] === "function" && o.t[t]() && (i = !0),
                     (o = o._next)
                 return i
               }),
@@ -1784,20 +1795,20 @@
               }),
               (d.plugin = function (t) {
                 if (!(t && t.propName && t.init && t.API))
-                  throw 'illegal plugin definition.'
+                  throw "illegal plugin definition."
                 let e
                 const i = t.propName
                 const s = t.priority || 0
                 const n = t.overwriteProps
                 const r = {
-                  init: '_onInitTween',
-                  set: 'setRatio',
-                  kill: '_kill',
-                  round: '_roundProps',
-                  initAll: '_onInitAllProps',
+                  init: "_onInitTween",
+                  set: "setRatio",
+                  kill: "_kill",
+                  round: "_roundProps",
+                  initAll: "_onInitAllProps",
                 }
                 const a = v(
-                  'plugins.' + i.charAt(0).toUpperCase() + i.substr(1) + 'Plugin',
+                  "plugins." + i.charAt(0).toUpperCase() + i.substr(1) + "Plugin",
                   function () {
                     J.call(this, i, s), (this._overwriteProps = n || [])
                   },
@@ -1805,7 +1816,7 @@
                 )
                 const o = (a.prototype = new J(i))
                   ; (o.constructor = a), (a.API = t.API)
-                for (e in r) typeof t[e] === 'function' && (o[r[e]] = t[e])
+                for (e in r) typeof t[e] === "function" && (o[r[e]] = t[e])
                 return (a.version = t.version), J.activate([a]), a
               }),
               (s = t._gsQueue))
@@ -1814,18 +1825,18 @@
             for (r in p)
               p[r].func ||
                 t.console.log(
-                  'GSAP encountered missing dependency: com.greensock.' + r
+                  "GSAP encountered missing dependency: com.greensock." + r
                 )
           }
           o = !1
         }
       })(
-        typeof module !== 'undefined' &&
+        typeof module !== "undefined" &&
           module.exports &&
-          typeof global !== 'undefined'
+          typeof global !== "undefined"
           ? global
           : this || window,
-        'TweenLite'
+        "TweenLite"
       )
       ; (function () {
         let width
@@ -1838,7 +1849,7 @@
         let animateHeader = true
 
         // Main
-        document.addEventListener('DOMContentLoaded', function (event) {
+        document.addEventListener("DOMContentLoaded", function (event) {
           initHeader()
           initAnimation()
           addListeners()
@@ -1849,13 +1860,13 @@
           height = window.innerHeight
           target = { x: width / 2, y: height / 2 }
 
-          largeHeader = document.getElementById('pageContent')
-          largeHeader.style.height = height + 'px'
+          largeHeader = document.getElementById("pageContent")
+          largeHeader.style.height = height + "px"
 
-          canvas = document.getElementById('demo-canvas')
+          canvas = document.getElementById("demo-canvas")
           canvas.width = width
           canvas.height = height
-          ctx = canvas.getContext('2d')
+          ctx = canvas.getContext("2d")
 
           // create points
           points = []
@@ -1903,7 +1914,7 @@
             const c = new Circle(
               points[i],
               2 + Math.random() * 0.7,
-              'rgba(255,255,255,0.3)'
+              "rgba(255,255,255,0.3)"
             )
             points[i].circle = c
           }
@@ -1911,11 +1922,11 @@
 
         // Event handling
         function addListeners() {
-          if (!('ontouchstart' in window)) {
-            window.addEventListener('mousemove', mouseMove)
+          if (!("ontouchstart" in window)) {
+            window.addEventListener("mousemove", mouseMove)
           }
-          window.addEventListener('scroll', scrollCheck)
-          window.addEventListener('resize', resize)
+          window.addEventListener("scroll", scrollCheck)
+          window.addEventListener("resize", resize)
         }
 
         function mouseMove(e) {
@@ -1945,7 +1956,7 @@
         function resize() {
           width = window.innerWidth
           height = window.innerHeight
-          largeHeader.style.height = height + 'px'
+          largeHeader.style.height = height + "px"
           canvas.width = width
           canvas.height = height
         }
@@ -2002,7 +2013,7 @@
             ctx.beginPath()
             ctx.moveTo(p.x, p.y)
             ctx.lineTo(p.closest[i].x, p.closest[i].y)
-            ctx.strokeStyle = 'rgba(255,255,255,' + p.active + ')'
+            ctx.strokeStyle = "rgba(255,255,255," + p.active + ")"
             ctx.stroke()
           }
         }
@@ -2021,7 +2032,7 @@
             if (!_this.active) return
             ctx.beginPath()
             ctx.arc(_this.pos.x, _this.pos.y, _this.radius, 0, 2 * Math.PI, false)
-            ctx.fillStyle = 'rgba(255,255,255,' + _this.active + ')'
+            ctx.fillStyle = "rgba(255,255,255," + _this.active + ")"
             ctx.fill()
           }
         }

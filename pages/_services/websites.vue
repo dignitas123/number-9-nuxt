@@ -2,7 +2,7 @@
   <b-container class="min-vh-100">
     <b-row class="mt-5">
       <b-col
-        ><h1>I am rendered on the {{ renderedOn }} side. Cool.</h1></b-col
+        ><h1>I am rendered on the {{ renderedOn }} side. Cool. 2</h1></b-col
       >
     </b-row>
   </b-container>
@@ -11,9 +11,9 @@
 <script>
 export default {
   asyncData() {
-    return { renderedOn: process.client ? 'client' : 'server' }
+    return { renderedOn: process.client ? "client" : "server" }
   },
-  layout: 'subpages',
+  layout: "subpages",
   data() {
     return {
       isHover: false,
