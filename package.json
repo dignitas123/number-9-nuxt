@@ -8,7 +8,9 @@
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "lint": "npm run lint:js"
+    "lint": "npm run lint:js",
+    "pre-commit": "npm run lint",
+    "heroku-postbuild": "npm run generate"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.32",

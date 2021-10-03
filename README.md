@@ -18,3 +18,10 @@ $ npm run generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+
+```bash
+# heroku deployment
+$ npm run generate
+
+# push to git
+```

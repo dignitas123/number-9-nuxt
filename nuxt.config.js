@@ -13,13 +13,13 @@ export default {
           'Number9 Technology Solutions ist eine Software- und Webentwicklungs Firma mit Sitz in Freiburg.',
       },
     ],
-    script: [
-      {
-        hid: 'staranimation',
-        src: 'js/loadCanvasAnimation.js',
-        defer: true,
-      },
-    ],
+    // script: [
+    //   {
+    //     hid: 'staranimation',
+    //     src: 'js/loadCanvasAnimation.js',
+    //     defer: true,
+    //   },
+    // ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
 
@@ -35,7 +35,7 @@ export default {
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
     // https://go.nuxtjs.dev/eslint
-    '@nuxtjs/eslint-module',
+    // '@nuxtjs/eslint-module',
   ],
   eslint: {
     rules: {
@@ -56,6 +56,11 @@ export default {
   ],
   bootstrapVue: {
     icons: true,
+  },
+
+  loading: {
+    color: 'blue',
+    height: '5px',
   },
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)

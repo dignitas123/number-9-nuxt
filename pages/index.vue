@@ -1,30 +1,20 @@
 <template>
   <section id="pageContent" class="text-capitalize text-left">
-    <HeroContent />
-    <ContactButton
+    <hero-content />
+    <contact-button
       :is-hover="isHover"
       @mouseover="isHover = true"
       @mouseleave="isHover = false"
       @click.native="openContact"
     />
-    <KontaktPopup ref="kontaktpopup" />
-    <StarAnimation />
+    <kontakt-popup ref="kontaktpopup" />
+    <star-animation />
   </section>
 </template>
 
 <script>
-import HeroContent from '~/components/HeroContent.vue'
-import ContactButton from '~/components/buttons/ContactButton.vue'
-import KontaktPopup from '~/components/KontaktPopup.vue'
-import StarAnimation from '~/components/StarAnimation.vue'
-
 export default {
-  components: {
-    HeroContent,
-    ContactButton,
-    KontaktPopup,
-    StarAnimation,
-  },
+  layout: 'default',
   data() {
     return {
       isHover: false,
@@ -32,29 +22,16 @@ export default {
   },
   methods: {
     openContact() {
-      console.log('clicked')
       this.$refs.kontaktpopup.$bvModal.show('modal-center')
     },
   },
+  head: {
+    script: [
+      {
+        // hid: 'staranimation',
+        src: 'js/loadCanvasAnimation.js',
+      },
+    ],
+  },
 }
 </script>
-
-<style scoped>
-#pageContent {
-  width: 100%;
-  min-height: 800px;
-  background: url('~@/assets/img/galaxy-11098_m.jpg') center / cover no-repeat;
-  background-size: auto;
-  height: 100vh;
-  color: white !important;
-  margin-top: -11vh;
-  padding-top: 33vh;
-}
-
-@media (min-width: 625px) {
-  #pageContent {
-    background: url('~@/assets/img/galaxy-11098.jpg') center / cover no-repeat;
-    margin-top: -13vh;
-  }
-}
-</style>

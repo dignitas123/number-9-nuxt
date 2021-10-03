@@ -8,7 +8,7 @@
           ><strong> · </strong><a href="#">Tech</a><strong> · </strong
           ><a href="#">Services</a><a href="#"></a>
         </p>
-        <p class="company-name">Number9 Technology Solutions© 2020</p>
+        <p class="company-name">Number9 Technology Solutions© 2021</p>
       </div>
       <div class="col-sm-6 col-md-4 footer-contacts">
         <div class="div-footer-links">

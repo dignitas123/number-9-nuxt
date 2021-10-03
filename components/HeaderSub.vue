@@ -1,22 +1,33 @@
 <template>
-  <nav class="navbar navbar-light navbar-expand-md text-white">
+  <nav
+    class="navbar navbar-light navbar-expand-md text-dark bg-light mx-auto py-0 shadow sticky-top"
+  >
     <div class="container">
-      <div class="navbar-brand"></div>
+      <div class="navbar-brand">
+        <a href="/">
+          <b-img
+            src="~@/assets/img/logo_black.svg"
+            fluid
+            alt="Number9 Logo"
+            width="200px"
+          ></b-img>
+        </a>
+      </div>
       <div id="openMenuArea" @click="openMenu">
         <DirtyHamburger />
       </div>
       <div
         id="navcol-1"
-        class="collapse navbar-collapse text-white justify-content-end"
+        class="collapse navbar-collapse justify-content-end"
         data-aos="fade"
       >
         <ul class="nav navbar-nav t">
           <li class="nav-item"></li>
           <li class="nav-item"></li>
           <li class="nav-item"></li>
-          <li class="nav-item dropdown show text-white">
+          <li class="nav-item dropdown show">
             <a
-              class="dropdown-toggle nav-link text-white"
+              class="dropdown-toggle nav-link"
               :class="{ 'dropdown-toggle-hover': hover2 }"
               data-toggle="dropdown"
               aria-expanded="true"
@@ -33,7 +44,7 @@
                 <div class="col">
                   <ul class="list-unstyled text-center col-xs-2">
                     <li class="nav-item">
-                      <nuxt-link to="/services/websites">Webseiten</nuxt-link>
+                      <a href="#">Webseiten</a>
                     </li>
                     <li class="nav-item">
                       <a href="#">Mobile Apps</a>
@@ -57,7 +68,7 @@
           </li>
           <li class="nav-item dropdown show">
             <a
-              class="dropdown-toggle nav-link text-white"
+              class="dropdown-toggle nav-link"
               :class="{ 'dropdown-toggle-hover': hover1 }"
               data-toggle="dropdown"
               aria-expanded="true"
@@ -101,7 +112,7 @@
           </li>
           <li class="nav-item dropdown show">
             <a
-              class="dropdown-toggle nav-link text-white"
+              class="dropdown-toggle nav-link"
               :class="{ 'dropdown-toggle-hover': hover3 }"
               data-toggle="dropdown"
               aria-expanded="true"
@@ -138,7 +149,7 @@
             </div>
           </li>
         </ul>
-        <a class="text-white phone-shaking" href="tel:004915737289767"
+        <a class="phone-shaking" href="tel:004915737289767"
           ><b-icon icon="telephone-fill" animation="shake"></b-icon
         ></a>
       </div>
@@ -189,10 +200,9 @@ export default {
 }
 </script>
 
-<style lang="scss">
-.navbar {
-  margin-right: 5%;
-  margin-left: 5%;
+<style scoped lang="scss">
+a {
+  color: #000 !important;
 }
 
 .phone-shaking svg:hover {
@@ -234,26 +244,17 @@ export default {
   }
 }
 
-.navbar-light .navbar-brand {
-  background: url('~@/assets/img/logo.svg') center / contain no-repeat;
-  width: 150px;
-  height: 41px;
-  margin: 23px;
-  margin-left: 12px;
-  margin-top: 16px;
-}
-
 .navbar-light .navbar-nav .nav-link.active {
-  color: #fff;
+  color: rgba(0, 0, 0, 0.5);
 }
 
 .navbar-light .navbar-nav .nav-link {
-  color: rgba(0, 0, 0, 0.5);
+  color: #fff;
   margin-right: 45px;
 }
 
 .navbar .navbar-toggler {
-  border-color: rgba(0, 0, 0, 0.6);
+  border-color: #fff;
 }
 
 .navbar .nav-item .dropdown-menu {
@@ -261,11 +262,11 @@ export default {
 }
 
 .nav-item:hover {
-  color: #fff !important;
+  color: rgba(0, 0, 0, 0.5) !important;
 }
 
 .nav-item:hover .nav-link {
-  color: #fff;
+  color: rgba(0, 0, 0, 0.5);
 }
 
 .navbar .nav-item:hover .dropdown-menu {
@@ -292,7 +293,7 @@ export default {
 }
 
 .dropdown-toggle:hover {
-  border-bottom: 2px solid white;
+  border-bottom: 2px solid black;
 }
 
 .dropdown-menu {
@@ -316,7 +317,7 @@ export default {
 }
 
 .dropdown-toggle-hover {
-  border-bottom: 2px solid white;
+  border-bottom: 2px solid black;
 }
 
 .navbar.navbar-light.navbar-expand-md.text-white {
